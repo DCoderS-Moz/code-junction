@@ -9,7 +9,8 @@ var db = mongoose.connection;
 var UserSchema = mongoose.Schema({
 	username: {
 		type: String,
-		index: true
+		index: true,
+		unique: true
 	},
 	password: {
 		type: String, 
@@ -17,25 +18,28 @@ var UserSchema = mongoose.Schema({
 		bcrypt:true
 	},
 	email: {
-		type: String
+		type: String,
+		required: true
 	},
 	name: {
-		type: String
+		type: String,
+		required: true
 	},
-	college_year: {
-		type: Number
+	year: {
+		type: Number,
+		required: true
 	},
 	score: {
 		type: Array
 	},
 	reg_data: {
-		type: Date
+		type: Date,
+		default: Date.now
 	},
-	reg_no: {
-		type: Number
-	},
-	profileimage: {
-		type: String
+	mobile_number: {
+		type: Number,
+		unique : true,
+		required: true
 	}
 });
 
@@ -63,7 +67,16 @@ module.exports.createUser = function(newUser, callback){
 		if(err) throw err;
 		// Set hash pw
 		newUser.password = hash;
-		// Create user
-		newUser.save(callback);
+
+		//Check for duplicate user
+		var query = {username: newUser.username};
+		User.findOne(query, function(err2,match){
+			if(match){
+				callback(err2,'duplicate');
+			} else {
+				// Create user
+				newUser.save(callback);
+			}
+		});
 	});
 }

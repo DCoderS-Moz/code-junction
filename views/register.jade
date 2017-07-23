@@ -15,15 +15,30 @@ block content
 				label Email
 				input.form-control(name='email', type='email', placeholder='Enter email')
 			.form-group
-				label Username
-				input.form-control(name='username', type='text', placeholder='Enter username')
-			.form-group
 				label Password
 				input.form-control(name='password', type='password', placeholder='Enter password')
 			.form-group
 				label Confirm Password
 				input.form-control(name='password2', type='password', placeholder='Enter confirm password')
 			.form-group
-				label Profile Image
-				input.form-control(name='profileimage', type='file')
+				label Registration Number
+				input.form-control(name='username', type='text', placeholder='Enter registration number')
+			.form-group
+				label Mobile Number
+				input.form-control(name='mobile_number', type='text', placeholder='Enter mobile number')
+			.form-group
+				label Year	&nbsp;	&nbsp;
+				label.radio-inline
+					input(type='radio', name='year', value='1')
+					| 1st
+				label.radio-inline
+					input(type='radio', name='year', value='2')
+					| 2nd
+				label.radio-inline
+					input(type='radio', name='year', value='3')
+					| 3rd
+				label.radio-inline
+					input(type='radio', name='year', value='4')
+					| 4th
+
 			input.btn.btn-primary(name='submit', type='submit', value='Register', style='width:100%;')
