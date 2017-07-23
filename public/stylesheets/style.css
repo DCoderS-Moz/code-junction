@@ -1,0 +1,27 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  padding-top: 50px;
+}
+
+a {
+  color: #000000;
+  font-weight: 700;
+}
+
+.heading-jumbo {
+	background-color: #2ecc71;
+    background-image: url(https://startbootstrap.com/img/bg.png);
+    color: white;
+    margin-top: 0;
+    font-size: 100px;
+}
+
+.navbar-fixed-top {
+	background: #141414;
+	color: white;
+}
+
+.footer {
+	height: 50px;
+	padding-top: 20px
+}
