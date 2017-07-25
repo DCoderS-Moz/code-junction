@@ -1,0 +1,44 @@
+extends layout
+
+block content
+	h3 Events
+		button.btn.btn-primary.pull-right(data-target='#add_event', data-toggle='modal') + Add event
+	div#events
+		table.table.table-striped#eventTable
+			thead
+				tr
+					th(width='25%') Name
+					th Date
+					th Language
+					th Duration
+					th Status
+					th Actions
+
+			tbody
+
+	div#add_event.modal.fade(role='dialog')
+		div.modal-dialog
+			div.modal-content
+				div.modal-header
+					button.close(type='button', data-dismiss='modal') &times;
+					h4 Add Event
+				div.modal-body
+					form(action='/admin/event/add', method='post')
+						div.form-group
+							label Name
+							input.form-control(type='text', name='name', placeholder='Enter event name', required='true')
+						div.form-group
+							label Language
+							select.form-control(name='language', required='true')
+								option(value='c') C
+						div.form-group
+							label Duration
+							input.form-control(type='number', name='duration', placeholder='Enter event duration in minutes', required='true')
+						div.form-group
+							label Number of questions
+							input.form-control(type='number', name='number_of_questions', placeholder='Enter number of questions', required='true')
+						div.form-group
+							button.btn.btn-primary(style='width:100%;', type='submit') Add Event
+
+	script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+	script(src='/js/admin.js')

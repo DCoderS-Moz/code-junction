@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	div#event_id(hidden='true') #{id}
+	div#question_number(hidden='true') #{question_number}
+
+	div.col-lg-6
+		div.form-group
+			label Question
+				textarea.form-control#question(cols=500, rows=20)
+
+	div.col-lg-6
+		div.form-group
+			label Test Inputs
+				textarea.form-control#input(cols=500, rows=20)
+
+	button.btn.btn-primary.pull-right#save Save Changes
+	
+	script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+	script(src='/js/admin_edit_question.js')
