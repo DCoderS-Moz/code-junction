@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	button.btn.btn-danger.pull-right(onclick='deleteEvent(\'#{id}\')') Delete Event
+	div.form-group
+		label Event ID :
+			div#event_id #{id}
+	div.form-group
+		label Name
+		input.form-control(type='text', id='name')
+	div.form-group
+		label Language
+		input.form-control(type='text', id='language')
+	div.form-group
+		label Duration
+		input.form-control(type='number', id='duration')
+	div#question_buttons
+
+	button.btn.btn-primary.pull-right#save Make changes
+
+	script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+	script(src='/js/admin_edit.js')

@@ -10,10 +10,10 @@ a {
 
 .heading-jumbo {
 	background-color: #2ecc71;
-    background-image: url(https://startbootstrap.com/img/bg.png);
-    color: white;
-    margin-top: 0;
-    font-size: 100px;
+  background-image: url(https://startbootstrap.com/img/bg.png);
+  color: white;
+  margin-top: 0;
+  font-size: 100px;
 }
 
 .navbar-fixed-top {

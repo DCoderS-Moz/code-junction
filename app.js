@@ -13,11 +13,14 @@ var upload = multer({ dest: './uploads' });
 var flash = require("connect-flash");
 var mongo = require("mongodb");
 var mongoose = require("mongoose");
+var mkdirp = require('mkdirp');
+var rmdir = require('rmdir');
+var fs = require("fs");
 var db = mongoose.connection;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var admin = require('./routes/admin');
+var admin = require('./routes/admin'); 
 var secret = require('./secret');
 
 var app = express();
